@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://db:5432/finance
+    username: lahmenev
+    password: lahmenev
+
+bot:
+  name: keepYour_money_bot
+  token: 6944734554:AAEd0Aibdkgg0a97_mZmQuM1N9pqYtzqCAU
+
+
+server:
+  port: 8081
+
