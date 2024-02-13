@@ -75,12 +75,12 @@ abstract class AbstractTransactionHandler(
 
                     val markupInline = InlineKeyboardMarkup()
                     val rowsInline = mutableListOf<List<InlineKeyboardButton>>()
-                    val rowInline = mutableListOf<InlineKeyboardButton>()
 
                     val categories = categoryRepository.findAll()
 
                     categories.map {it.name}.forEach {
                         val keyboardBtn = InlineKeyboardButton()
+                        val rowInline = mutableListOf<InlineKeyboardButton>()
                         keyboardBtn.text = it
                         keyboardBtn.callbackData = "${CallbackStateEnum.SELECT_CATEGORY_CALLBACK.name}:$it"
                         rowInline.add(keyboardBtn)
