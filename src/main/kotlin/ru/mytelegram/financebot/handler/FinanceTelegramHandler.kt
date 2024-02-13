@@ -19,7 +19,7 @@ class FinanceTelegramHandler(
         if ((update.hasMessage() && update.getMessage().hasText()) || update.hasCallbackQuery()) {
             val chatId = update.getMessage()?.chatId ?: update.callbackQuery.from.id
 
-            if (update.hasMessage() && update.getMessage().getText().equals("/mainmenu")) {
+            if (update.hasMessage() && update.getMessage().getText().equals("/start")) {
 
                 userRepository.findByChatId(chatId) ?:
                 userRepository.save(UsersEntity(
@@ -50,9 +50,7 @@ class FinanceTelegramHandler(
     }
 
     private fun getCurrentState(update: Update, userId: Long): CommandEnum {
-
-
-        return if (update.hasMessage() && update.getMessage().getText().equals("/mainmenu") ||
+        return if (update.hasMessage() && update.getMessage().getText().equals("/start") ||
             update.hasCallbackQuery() && update.callbackQuery.data.equals(CommandEnum.START_COMMAND.name)) {
             CommandEnum.START_COMMAND
         } else if (update.hasCallbackQuery() && update.callbackQuery.data.equals(CommandEnum.SUBTRACT_TRANSACTION.name)) {
