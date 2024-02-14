@@ -35,12 +35,16 @@ dependencies {
 
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.projectlombok:lombok:1.18.22")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("org.telegram:telegrambots:6.8.0")
     implementation("org.telegram:telegrambots-spring-boot-starter:6.9.7.0")
     implementation("org.springframework.boot:spring-boot-configuration-processor")
-
     implementation("javax.xml.bind:jaxb-api:2.3.1")
+
+    /* test */
+    testImplementation("io.mockk:mockk:1.13.4")
+    testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
+    testImplementation("org.jeasy:easy-random-core:5.0.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
 
 }
 
