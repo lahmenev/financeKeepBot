@@ -8,8 +8,9 @@ jobs:
     name: copy
     runs-on: ubuntu-latest
     steps:
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@v1.0.3
+      - uses: actions/checkout@v4
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USERNAME }}
