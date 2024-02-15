@@ -16,5 +16,5 @@ jobs:
           username: ${{ secrets.DEPLOY_USERNAME }}
           password: ${{ secrets.DEPLOY_PASSWORD }}
           port: 22
-          source: "./docker-compose.yml"
+          source: "./docker-compose.yml, ./Dockerfile"
           target: "~/.deploy/${{ github.event.repository.name }}/"
