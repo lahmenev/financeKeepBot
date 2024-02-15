@@ -36,8 +36,9 @@ jobs:
           build-args: |
             build_mode=Release
       # Copy docker-compose and .env files to target server
-      - name: copy files to target server via scp
-        uses: appleboy/scp-action@v0.1.3
+      - uses: actions/checkout@v4
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USERNAME }}
