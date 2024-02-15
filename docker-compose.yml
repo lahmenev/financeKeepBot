@@ -13,8 +13,8 @@ services:
       - POSTGRES_USER=lahmenev
   app:
     image: ghcr.io/lahmenev/financebot:latest
-    build:
-      context: ./
+#    build:
+#      context: ./
     ports:
       - "8081:8081"
     environment:
