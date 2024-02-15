@@ -35,3 +35,13 @@ jobs:
             "ASPNETCORE_ENVIRONMENT=Release"
           build-args: |
             build_mode=Release
+      # Copy docker-compose and .env files to target server
+      - name: copy files to target server via scp
+        uses: appleboy/scp-action@v0.1.3
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USERNAME }}
+          port: 22
+          key: ${{ secrets.DEPLOY_KEY }}
+          source: "./docker-compose.yml"
+          target: "~/.deploy/${{ github.event.repository.name }}/"
