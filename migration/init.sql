@@ -64,3 +64,4 @@ alter table transactions ADD CONSTRAINT fk_transactions_account FOREIGN KEY (acc
 alter table account ADD CONSTRAINT fk_account_users FOREIGN KEY (user_id) REFERENCES users(chat_id);
 alter table user_state ADD CONSTRAINT fk_user_state_users FOREIGN KEY (user_id) REFERENCES users(chat_id);
 alter table user_callback_state ADD CONSTRAINT fk_user_callback_state_user_state FOREIGN KEY (user_state_id) REFERENCES user_state(id);
+
