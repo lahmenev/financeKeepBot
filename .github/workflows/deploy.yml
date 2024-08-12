@@ -56,3 +56,4 @@ jobs:
             cd ~/.deploy/${{ github.event.repository.name }}/
             sudo docker compose pull
             sudo docker compose up -d
+            
